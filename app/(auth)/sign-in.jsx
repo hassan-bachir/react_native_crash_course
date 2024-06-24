@@ -1,5 +1,5 @@
 import { View, Image, ScrollView, Text } from "react-native";
-import React from "react";
+import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
 import FormField from "../../components/FormField";
@@ -26,6 +26,14 @@ const SignIn = () => {
                         handleChangeText={(e) => setForm({ ...form, email: e })}
                         otherStyles="mt-7"
                         keyboardType="email-address"
+                    />
+                    <FormField
+                        title="Password"
+                        value={form.password}
+                        handleChangeText={(e) =>
+                            setForm({ ...form, password: e })
+                        }
+                        otherStyles="mt-7"
                     />
                 </View>
             </ScrollView>
